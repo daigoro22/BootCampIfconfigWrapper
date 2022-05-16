@@ -15,7 +15,7 @@ someFunc = do
 addHeader :: [String] -> String -> String
 addHeader [] _ = ""
 addHeader (l:ls) h
-    | l =="" = '\n':l ++ residBody  ("") -- 空行の場合
+    | l =="" = '\n':(residBody  "") -- 空行の場合
     | isLetter (head l) =  '\n':l ++ residBody(header) -- ヘッダがある行の場合
     | otherwise = '\n':h ++ l ++ residBody(header) -- ヘッダ無しで空行以外の場合
 
